@@ -1,0 +1,78 @@
+{
+  "name": "great-wall-admin-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist",
+  "scripts": {
+    "prepare": "husky install",
+    "build": "tsc",
+    "build-w": "tsc -w",
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/nodemon --inspect=9229 bin/www",
+    "test": "cross-env NODE_ENV=test jest --runInBand --forceExit --colors",
+    "prod": "pm2 start ecosystem.config.js --env production",
+    "stop": "pm2 stop ecosystem.config.js",
+    "logs": "pm2 logs",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaotingamy/great-wall-admin-backend.git"
+  },
+  "keywords": [
+    "koa",
+    "admin"
+  ],
+  "author": "guoxt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiaotingamy/great-wall-admin-backend/issues"
+  },
+  "homepage": "https://github.com/xiaotingamy/great-wall-admin-backend#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-helmet": "^6.1.0",
+    "koa-jwt": "^4.0.3",
+    "koa-redis": "^4.0.1",
+    "koa-router": "^10.1.1",
+    "koa-static-cache": "^5.1.4",
+    "koa2-cors": "^2.0.6",
+    "log4js": "^6.3.0",
+    "mysql2": "^2.3.3-rc.0",
+    "node-rsa": "^1.1.1",
+    "redis": "^3.1.2",
+    "sequelize": "^6.9.0"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.3",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa-static-cache": "^5.1.1",
+    "@types/koa2-cors": "^2.0.2",
+    "@types/node": "^16.11.7",
+    "@types/node-rsa": "^1.1.1",
+    "@types/redis": "^2.8.32",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "commitizen": "^4.2.4",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.2.0",
+    "eslint-plugin-jest": "^25.2.4",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.14",
+    "supertest": "^6.1.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
